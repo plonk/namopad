@@ -1,0 +1,127 @@
+# フォントとか
+#gtk-key-theme-name = "Emacs"
+style "modeline"
+{
+	font_name = "Consolas, Meiryo 11"
+}
+style "font"
+{
+font_name = "Meiryo 9"
+#font_name = "MS PGothic 14"
+#font_name = "Meiryo, Gautami, DejaVu Sans Mono 14"
+}
+style "minibuffer"
+{
+#	font_name = "Consolas, MS Gothic 12"
+	font_name = "12"
+}
+style "buffer"
+{
+#font_name = "Meiryo, DokChampa, DejaVu Sans 14"
+#font_name = "Mangal, Meiryo 14"
+	font_name = "MS Gothic 12"
+}
+style "unicode"
+{
+font_name = "Meiryo, BatangChe, Gautami, DokChampa, Sylfaen, Kartika 9"
+}
+style "unicode_big"
+{
+font_name = "Meiryo, BatangChe, Gautami, DokChampa, Sylfaen, Kartika 18"
+}
+
+# ウィンドウが非アクティブの時でも選択されているテキストが見やすいようにする
+style "textcolor"
+{
+#        base[NORMAL] = "gray" # light gray
+        text[NORMAL] = "#DDDDDD"
+        base[NORMAL] = "#000000"
+#        base[NORMAL] = "#000040"
+#	base[ACTIVE] = "#3399FF" # 薄い水色Win標準
+#	text[ACTIVE] = "white"
+	base[ACTIVE] = "white" # 薄い水色Win標準
+	text[ACTIVE] = "black"
+	base[SELECTED] = "white" # 薄い水色Win標準
+	text[SELECTED] = "black"
+	base[INSENSITIVE] = "#333333"
+#	GtkWidget::cursor-color = "red"
+#	GtkWidget::cursor-color = "#006600" #　暗い緑
+	GtkWidget::cursor-color = "yellow"
+	GtkWidget::cursor-aspect-ratio = 0.1
+}
+style "infobar" {
+	bg[NORMAL] = "#3399FF"
+}
+binding "UnbindDefaults" {
+	unbind "<Control>slash"
+	unbind "<Control>backslash"
+
+	unbind "<Control>a"
+	unbind "<Control>A"
+	unbind "F7"
+	unbind "<Control>x"
+	unbind "<Control>c"
+	unbind "<Control>v"
+}
+binding "MoveCursor" {
+	bind "<Control>h" {
+	     "move-cursor" (logical-positions, -1, 0)
+	}
+	bind "<Control>j" {
+	     "move-cursor" (display-lines, 1, 0)
+	}
+	bind "<Control>k" {
+	     "move-cursor" (display-lines, -1, 0)
+	}
+	bind "<Control>l" {
+	     "move-cursor" (logical-positions, 1, 0)
+	}
+	bind "<Control>m" {
+	     "move-cursor" (paragraph-ends, -1, 0)
+	}
+
+
+
+	bind "<Control><Shift>h" {
+	     "move-cursor" (logical-positions, -1, 1)
+	}
+	bind "<Control><Shift>j" {
+	     "move-cursor" (display-lines, 1, 1)
+	}
+	bind "<Control><Shift>k" {
+	     "move-cursor" (display-lines, -1, 1)
+	}
+	bind "<Control><Shift>l" {
+	     "move-cursor" (logical-positions, 1, 1)
+	}
+
+	bind "<Control>semicolon" {
+	     "move-cursor" (paragraph-ends, -1, 0)
+	}
+	bind "<Control>colon" {
+	     "move-cursor" (paragraph-ends, -1, 1)
+	}
+	bind "<Control>apostrophe" {
+	     "move-cursor" (paragraph-ends, 1, 0)
+	}
+	bind "<Control>quotedbl" {
+	     "move-cursor" (paragraph-ends, 1, 1)
+	}
+}
+binding "d-delete" {
+	bind "<Control>d" {
+		"delete-from-cursor" (chars, 1)
+        }
+}
+widget_class "*" style "font"
+widget "*.buffer" style "buffer"
+widget "*.minibuffer" style "minibuffer"
+widget "*.charinfo" style "unicode"
+widget "*.character" style "unicode_big"
+widget_class "*TextView" style "textcolor"
+#widget_class "*TextView" binding "MoveCursor"
+#widget_class "*TextView" binding "d-delete"
+widget_class "*TextView" binding "UnbindDefaults"
+widget_class "*TextView" style "buffer"
+widget_class "*InfoBar" style "infobar"
+widget "*.modeline" style "modeline"

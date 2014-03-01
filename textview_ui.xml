@@ -1,0 +1,79 @@
+<ui>
+  <menubar>
+    <menu name="FileMenu" action="FileMenuAction">
+      <menuitem name="New" action="NewAction" />
+      <menuitem name="Open" action="OpenAction" />
+      <menuitem name="OpenRecent" action="OpenRecentAction" />
+      <menuitem name="SameDir" action="SameDirAction" />
+      <menuitem name="Close" action="CloseAction" />
+      <separator />
+      <menuitem name="Save" action="SaveAction" />
+      <menuitem name="SaveAs" action="SaveAsAction" />
+      <separator />
+      <menuitem name="Revert" action="RevertAction" />
+      <menuitem name="RevertWithEncoding" action="RevertWithEncodingAction" />
+      <separator />
+      <menuitem name="Quit" action="QuitAction" />
+    </menu>
+    <menu name="EditMenu" action="EditMenuAction">
+      <menuitem name="Undo" action="UndoAction" />
+      <menuitem name="Redo" action="RedoAction" />
+      <separator />
+      <menuitem name="Cut" action="CutAction" />
+      <menuitem name="Copy" action="CopyAction" />
+      <menuitem name="Paste" action="PasteAction" />
+      <menuitem name="Delete" action="DeleteAction" />
+      <separator />
+      <menuitem name="Find" action="FindAction" />
+      <menuitem name="FindNext" action="FindNextAction" />
+      <menuitem name="Replace" action="ReplaceAction" />
+      <menuitem name="GotoLine" action="GotoLineAction" />
+      <separator />
+      <menuitem name="SelectAll" action="SelectAllAction" />
+    </menu>
+    <menu name="FormatMenu" action="FormatMenuAction">
+      <menuitem name="ZoomIn" action="ZoomInAction" />
+      <menuitem name="ZoomOut" action="ZoomOutAction" />
+      <menuitem name="Reset" action="ResetAction" />
+<!--
+      <separator />
+      <menuitem name="Fixed" action="FixedAction" />
+      <menuitem name="Proportional" action="ProportionalAction" />
+-->
+      <separator />
+      <menuitem name="Wrap" action="WrapAction" />
+    </menu>
+    <menu name="ViewMenu" action="ViewMenuAction">
+      <menuitem name="StatusBar" action="StatusBarAction" />
+      <menuitem name="CharInfo" action="CharInfoAction" />
+      <separator />
+      <menuitem name="ColorCode" action="ColorCodeAction" />
+      <separator />
+      <menuitem name="ViewMode" action="ViewModeAction" />
+    </menu>
+    <menu name="BuffersMenu" action="BuffersMenuAction">
+    </menu>
+    <menu name="MiscMenu" action="MiscMenuAction">
+      <menuitem name="Eval" action="EvalAction" />
+      <menuitem name="EvalPrint" action="EvalPrintAction" />
+      <menuitem name="DeleteOutput" action="DeleteOutputAction" />
+      <separator />
+      <menuitem name="Restart" action="RestartAction" />
+    </menu>
+    <menu name="HelpMenu" action="HelpMenuAction">
+      <menuitem name="Version" action="VersionAction" />
+    </menu>
+  </menubar>
+  <popup name="EncodingPopup">
+    <menuitem name="CP932" action="CP932Action" />
+    <menuitem name="MacJapanese" action="MacJapaneseAction" />
+    <menuitem name="EUC-JP" action="EUC-JPAction" />
+    <menuitem name="UTF8_NOBOM" action="UTF8_NOBOMAction" />
+    <menuitem name="UTF8_BOM" action="UTF8_BOMAction" />
+  </popup>
+  <popup name="EOLPopup">
+    <menuitem name="CRLF" action="CRLFAction" />
+    <menuitem name="CR" action="CRAction" />
+    <menuitem name="LF" action="LFAction" />
+  </popup>
+</ui>
